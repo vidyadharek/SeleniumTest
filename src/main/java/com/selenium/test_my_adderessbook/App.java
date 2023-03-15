@@ -24,10 +24,16 @@ public class App
             //chromeOptions.addArguments("--headless");
     	    chromeOptions.addArguments("--remote-allow-origins=*");
             chromeOptions.addArguments("--disable-dev-shm-usage");
-            chrome_options.add_argument("--disable-extensions")
-            chrome_options.add_argument("--disable-gpu")
-            chrome_options.add_argument("--no-sandbox")
-            driver = webdriver.Chrome(options=chrome_options)
+            chrome_options.add_argument("--disable-extensions");
+            chrome_options.add_argument("--disable-gpu");
+            chrome_options.add_argument("--no-sandbox");
+            driver = webdriver.Chrome(options=chrome_options);
+        
+       // chrome_options = Options()
+       // chrome_options.add_argument("--disable-extensions")
+      //  chrome_options.add_argument("--disable-gpu")
+      //  chrome_options.add_argument("--no-sandbox")
+      //  driver = webdriver.Chrome(options=chrome_options)
             
     	    //pass the varibale to the driver
     	    WebDriver driver = new ChromeDriver(chromeOptions);
