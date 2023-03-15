@@ -24,9 +24,9 @@ public class App
             //chromeOptions.addArguments("--headless");
     	    chromeOptions.addArguments("--remote-allow-origins=*");
             chromeOptions.addArguments("--disable-dev-shm-usage");
-            chrome_options.addArguments("--disable-extensions");
-            chrome_options.addArguments("--disable-gpu");
-            chrome_options.addArguments("--no-sandbox");
+            chromeOptions.addArguments("--disable-extensions");
+            chromeOptions.addArguments("--disable-gpu");
+            chromeOptions.addArguments("--no-sandbox");
            // driver = webdriver.Chrome(options=chrome_options);
         
        // chrome_options = Options()
