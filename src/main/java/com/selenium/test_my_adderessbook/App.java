@@ -21,9 +21,10 @@ public class App
     	   
     	    //object of chrome options
     	    ChromeOptions chromeOptions = new ChromeOptions();
+            chromeOptions.addArguments("--headless");
     	    chromeOptions.addArguments("--remote-allow-origins=*");
             chromeOptions.addArguments("--disable-dev-shm-usage");
-            chromeOptions.addArguments("--headless");
+            
     	    //pass the varibale to the driver
     	    WebDriver driver = new ChromeDriver(chromeOptions);
     	   
