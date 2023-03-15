@@ -41,7 +41,7 @@ public class App
     	    System.out.println("selenium test case started");
     	   
     	    // open the web browser and enter application url
-    	    driver.get("http://3.113.10.177:8081/");
+    	    driver.get("http://localhost:8081/");
         	
         	//wait for page to load
         	driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
