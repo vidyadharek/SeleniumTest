@@ -17,10 +17,11 @@ public class App
     public static void main( String[] args ) throws InterruptedException, IOException
     {
         //load driver or set location of driver
-    	  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    	  System.setProperty("webdriver.chrome.driver", "E:\\Chrome_WebDriver\\chromedriver.exe");
     	   
     	    //object of chrome options
     	    ChromeOptions chromeOptions = new ChromeOptions();
+    	    chromeOptions.addArguments("--remote-allow-origins=*");
     	    //pass the varibale to the driver
     	    WebDriver driver = new ChromeDriver(chromeOptions);
     	   
