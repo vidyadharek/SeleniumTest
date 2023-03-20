@@ -18,6 +18,7 @@ public class App
     {
         //load driver or set location of driver
     	  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        
     	   
     	    //object of chrome options
     	    ChromeOptions chromeOptions = new ChromeOptions();
@@ -27,13 +28,21 @@ public class App
             chromeOptions.addArguments("--disable-extensions");
             chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--no-sandbox");
-           // driver = webdriver.Chrome(options=chrome_options);
+            driver = webdriver.Chrome(options=chromeOptions);
+            driver.manage().window().maximize();
         
        // chrome_options = Options()
        // chrome_options.add_argument("--disable-extensions")
       //  chrome_options.add_argument("--disable-gpu")
       //  chrome_options.add_argument("--no-sandbox")
       //  driver = webdriver.Chrome(options=chrome_options)
+        
+        
+
+
+
+
+        
             
     	    //pass the varibale to the driver
     	    WebDriver driver = new ChromeDriver(chromeOptions);
@@ -45,6 +54,12 @@ public class App
         	
         	//wait for page to load
         	driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        
+            Thread.sleep(10000);
+        
+             WebElement element = driver.findElement(By.className("carousel-control-prev"));
+             Actions actions = new Actions(driver);
+             actions.moveToElement(element).click();
         	
         	driver.findElement(By.className("carousel-control-prev")).click();
     	    
