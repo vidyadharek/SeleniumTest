@@ -3,7 +3,7 @@ package com.selenium.test_my_adderessbook;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
+import org.openqa.selenium.WebElement;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -11,6 +11,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 
 public class App 
 {
@@ -28,7 +29,7 @@ public class App
             chromeOptions.addArguments("--disable-extensions");
             chromeOptions.addArguments("--disable-gpu");
             chromeOptions.addArguments("--no-sandbox");
-            driver = webdriver.Chrome(options=chromeOptions);
+            WebDriver driver = new ChromeDriver(chromeOptions);
             driver.manage().window().maximize();
         
        // chrome_options = Options()
@@ -45,7 +46,7 @@ public class App
         
             
     	    //pass the varibale to the driver
-    	    WebDriver driver = new ChromeDriver(chromeOptions);
+    	   // WebDriver driver = new ChromeDriver(chromeOptions);
     	   
     	    System.out.println("selenium test case started");
     	   
@@ -57,11 +58,13 @@ public class App
         
             Thread.sleep(10000);
         
-             WebElement element = driver.findElement(By.className("carousel-control-prev"));
-             Actions actions = new Actions(driver);
-             actions.moveToElement(element).click();
+            WebElement element = driver.findElement(By.className("carousel-control-prev"));
+            // Create an instance of the Actions class
+            Actions actions = new Actions(driver);
+            // Perform a mouse hover over the element and click it
+            actions.moveToElement(element).click().perform();
         	
-        	driver.findElement(By.className("carousel-control-prev")).click();
+        	//driver.findElement(By.className("carousel-control-prev")).click();
     	    
         	Thread.sleep(5000);
     	    
