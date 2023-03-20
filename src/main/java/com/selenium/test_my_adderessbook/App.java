@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.MoveTargetOutOfBoundsException;
 
 public class App 
 {
@@ -57,6 +58,8 @@ public class App
         	driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         
             Thread.sleep(10000);
+        
+        
         
             WebElement element = driver.findElement(By.className("carousel-control-prev"));
             // Create an instance of the Actions class
