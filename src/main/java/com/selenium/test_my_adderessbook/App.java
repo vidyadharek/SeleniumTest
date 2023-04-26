@@ -52,7 +52,7 @@ public class App
     	    System.out.println("selenium test case started");
     	   
     	    // open the web browser and enter application url
-    	    driver.get("http://18.179.61.216:8081/");
+    	    driver.get("http://13.114.33.3:8081/");
         	
         	//wait for page to load
         	driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
